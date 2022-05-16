@@ -51,11 +51,13 @@ void run_code(stack_t **stack, char *name, char *value, int line_number);
 void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
 size_t print_dlistint(const stack_t *h);
 void free_stack(stack_t *head);
+void pint(stack_t **stack, unsigned int line_number);
 /** Array of struct*/
 
 static const instruction_t array_fuction[] = {
 	{"push", _push},
 	{"pall", pall},
+	{"pint", pint},
 	{NULL, NULL}};
 
 /*Prototipo*/
