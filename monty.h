@@ -52,15 +52,17 @@ void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
 size_t print_dlistint(const stack_t *h);
 void free_stack(stack_t *head);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+FILE *open_file(char *argv);
+int number_is(char *str);
 /** Array of struct*/
 
 static const instruction_t array_fuction[] = {
 	{"push", _push},
 	{"pall", pall},
 	{"pint", pint},
+	{"pop", pop},
 	{NULL, NULL}};
 
 /*Prototipo*/
-int number_is(char *str);
-FILE *open_file(char *argv);
 #endif
