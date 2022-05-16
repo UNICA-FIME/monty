@@ -57,6 +57,7 @@ FILE *open_file(char *argv);
 int number_is(char *str);
 void swap(stack_t **stack, unsigned int line_number);
 size_t stack_len(const stack_t *h);
+void add(stack_t **stack, unsigned int line_number);
 /** Array of struct*/
 
 static const instruction_t array_fuction[] = {
@@ -65,6 +66,7 @@ static const instruction_t array_fuction[] = {
 	{"pint", pint},
 	{"pop", pop},
 	{"swap", swap},
+	{"add", add},
 	{NULL, NULL}};
 
 /*Prototipo*/
