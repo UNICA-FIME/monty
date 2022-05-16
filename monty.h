@@ -59,6 +59,7 @@ void swap(stack_t **stack, unsigned int line_number);
 size_t stack_len(const stack_t *h);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 /** Array of struct*/
 
 static const instruction_t array_fuction[] = {
@@ -69,6 +70,7 @@ static const instruction_t array_fuction[] = {
 	{"swap", swap},
 	{"add", add},
 	{"nop", nop},
+	{"sub", sub},
 	{NULL, NULL}};
 
 /*Prototipo*/
