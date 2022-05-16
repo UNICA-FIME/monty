@@ -1,7 +1,5 @@
 #include "monty.h"
-
 int status = 0;
-
 /**
  * main - main function
  *
@@ -9,6 +7,7 @@ int status = 0;
  * @argv: arguments
  * Return: Always 0
  */
+
 int main(int argc, char *argv[])
 {
 	FILE *file;
