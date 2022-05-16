@@ -12,9 +12,9 @@
 
 void run_code(stack_t **stack, char *name, char *value, int line_number)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; array_fuction[i].opcode; i++)
+	for (; array_fuction[i].opcode; i++)
 	{
 		if (strcmp(name, array_fuction[i].opcode) == 0)
 		{
@@ -25,21 +25,22 @@ void run_code(stack_t **stack, char *name, char *value, int line_number)
 			}
 			if (strcmp(name, array_fuction[0].opcode) == 0 && !number_is(value))
 			{
-				fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
 				status = EXIT_FAILURE;
+				fprintf(stderr, "L%d: usage: push integer\n", line_number);
 				return;
 			}
 			if (strcmp(name, array_fuction[0].opcode) == 0 && !value)
 			{
-				fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
 				status = EXIT_FAILURE;
+				fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
+				return;
 			}
 			array_fuction[i].f(stack, atoi(value));
 			return;
 		}
 	}
-	fprintf(stderr, "L<%d>: unknown instruction <%s>\n", line_number, name);
 	status = EXIT_FAILURE;
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, name);
 }
 
 /**
