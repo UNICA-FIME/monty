@@ -13,21 +13,20 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	if (stack)
 	{
-		newnode = (stack_t *)malloc(sizeof(stack_t));
-		if (newnode == NULL)
+		newnode = malloc(sizeof(stack_t));
+		if (!newnode)
 		{
 			free(newnode);
 			return;
 		}
 		tmp = *stack;
-		newnode->n = line_number;
 		newnode->prev = NULL;
 		newnode->next = tmp;
+		newnode->n = line_number;
 		if (newnode->next)
 		{
 			tmp->prev = newnode;
 		}
 		*stack = newnode;
 	}
-
 }
