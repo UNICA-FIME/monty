@@ -28,3 +28,22 @@ void swap(stack_t **stack, unsigned int line_number)
 	first->prev = second;
 	*stack = second;
 }
+
+/**
+ * stack_len - calculate a size of a double linked list
+ *
+ * @h: double linked list
+ * Return: size of h
+ */
+
+size_t stack_len(const stack_t *h)
+{
+	size_t size = 0;
+
+	while (h)
+	{
+		h = h->next;
+		size++;
+	}
+	return (size);
+}
