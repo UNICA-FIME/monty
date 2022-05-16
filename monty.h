@@ -72,7 +72,7 @@ static const instruction_t array_fuction[] = {
 	{"add", add},
 	{"nop", nop},
 	{"sub", sub},
-	{"div", div},
+	{"div", _div},
 	{NULL, NULL}};
 
 /*Prototipo*/
