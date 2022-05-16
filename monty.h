@@ -58,7 +58,7 @@ int number_is(char *str);
 void swap(stack_t **stack, unsigned int line_number);
 size_t stack_len(const stack_t *h);
 void add(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack __attribute__((unused));
+void nop(stack_t **stack, unsigned int line_number);
 /** Array of struct*/
 
 static const instruction_t array_fuction[] = {
