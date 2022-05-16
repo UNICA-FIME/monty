@@ -12,15 +12,15 @@
 
 void run_code(stack_t **stack, char *name, char *value, int line_number)
 {
-	int i = 0;
+	int e = 0;
 
-	for (; array_fuction[i].opcode; i++)
+	for (; array_fuction[e].opcode; e++)
 	{
-		if (strcmp(name, array_fuction[i].opcode) == 0)
+		if (strcmp(name, array_fuction[e].opcode) == 0)
 		{
 			if (strcmp(name, array_fuction[0].opcode) != 0)
 			{
-				array_fuction[i].f(stack, line_number);
+				array_fuction[e].f(stack, line_number);
 				return;
 			}
 			if (strcmp(name, array_fuction[0].opcode) == 0 && !number_is(value))
@@ -35,7 +35,7 @@ void run_code(stack_t **stack, char *name, char *value, int line_number)
 				fprintf(stderr, "L<%d>: usage: push integer\n", line_number);
 				return;
 			}
-			array_fuction[i].f(stack, atoi(value));
+			array_fuction[e].f(stack, atoi(value));
 			return;
 		}
 	}
@@ -52,17 +52,17 @@ void run_code(stack_t **stack, char *name, char *value, int line_number)
 
 int number_is(char *str)
 {
-	int i = 0;
+	int f = 0;
 
 	if (str == NULL)
 		return (0);
-	if (str[i] == '-')
+	if (str[f] == '-')
 	{
-		i++;
+		f++;
 	}
-	for (; str[i] != '\0'; i++)
+	for (; str[f] != '\0'; f++)
 	{
-		if (str[i] < '0' || str[i] > '9')
+		if (str[f] < '0' || str[f] > '9')
 		{
 			return (0);
 		}
